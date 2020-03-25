@@ -9,20 +9,119 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     
     <title>Bootstrap LOYO 2</title>
-    
-    
-    <style>
-      
-    </style>
   </head>
   <body>
-    
-    
-    
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    
+    <script>
+      $(document).ready(function() {
+      // $('[data-toggle="popover"]').popover();
+      
+        $('[data-toggle="enable"]').popover('enable');
+        $('[data-toggle="disable"]').popover('disable');
+      });
+    </script>
+    
+    <style type="text/css">
+      .frame {
+        width: 100vw;
+        height: 100vh;
+        background: rgb(220,220,220);
+      }
+      .stepsize {
+        width: 50px;
+        height: 35px;
+      }
+      
+      button {
+        position: absolute;
+      }
+      
+      .center {
+        left: 45vw;
+        top: 50vh;
+      }
+      
+      #step1 {
+        left: 10vw;
+        top: 55vh;
+      }
+      
+      #step2 {
+        left: 55vw;
+        top: 60vh;
+      }
+      
+      #step3 {
+        left: 60vw;
+        top: 20vh;
+      }
+      
+      #step4 {
+        left: 20vw;
+        top: 77vh;
+      }
+      
+      #step5 {
+        left: 30vw;
+        top: 30vh;
+      }
+    
+      #step6 {
+        left: 80vw;
+        top: 40vh;
+      }
+    </style>
+    
+    <div class="frame">
+      <button type="button" class="center btn btn-secondary" data-toggle="enable" title="Pop Start" data-placement="bottom" data-trigger="click" data-content="Go find the End, only counts if it says The End">
+        Start
+      </button>
+      
+      <button type="button" id="step1" class="stepsize btn btn-secondary" data-toggle="enable" title="Step 1" data-placement="right" data-trigger="hover" data-content="The first step of the journey"></button>
+      
+      <button type="button" id="step3" class="stepsize btn btn-secondary" data-toggle="enable" title="Step 3" data-placement="top" data-trigger="hover" data-content="Good job getting to the third step"></button>
+      
+      <button type="button" id="step6" class="stepsize btn btn-secondary" data-toggle="enable" title="Step 6" data-placement="left" data-trigger="focus" data-content="Did you skip steps?"></button>
+      
+      <div class="dropdown">
+        <button id="step4" class="btn btn-secondary" type="button" data-toggle="dropdown">
+          Not a dropdown
+        </button>
+        
+        <div class="dropdown-menu">
+          <p style="margin-left: 10px; font-weight: bold;">Step 4</p>
+          <div class="dropdown-divider"></div>
+          <p style="margin-left: 5px;">See, not a dropdown</p>
+          <p style="margin-left: 5px;">Just a bit different</p>
+        </div>
+    </div>
+    
+    <div class="btn-group dropleft">
+      <button type="button" id="step5" class="btn btn-secondary" data-toggle="dropdown">
+        Dropright
+      </button>
+      
+      <div class="dropdown-menu">
+        <p style="margin-left: 10px; font-weight: bold;">Step 5</p>
+        <div class="dropdown-divider"></div>
+        <p style="margin-left: 10px; font-weight: bold;">Right</p>
+      </div>
+    </div>
+    
+    <div id="step2" class="btn-group">
+      <button type="button" class="stepsize btn btn-secondary" data-toggle="enable" title="Step 2" data-placement="bottom" data-trigger="focus" data-content="This is the second step of this journey"></button>
+      
+      <button type="button" class="btn" data-toggle="dropdown"></button>
+      
+      <div class="dropdown-menu">
+        <p>Oh? you found the hidden secert? But is there more?</p>
+        <button class="btn" data-toggle="enable" title="The End" data-placement="bottom" data-trigger="click" data-content="Looks like you found the final box. Congrates, you found The End. So how long did it take?"></button>
+      </div>
+    </div>
   </body>
 </html>
